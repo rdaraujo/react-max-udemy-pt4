@@ -49,11 +49,11 @@ const Login = props => {
     dispatchPasswordAction({ type: "USER_INPUT", val: event.target.value });
   };
 
-  const validateEmailHandler = event => {
+  const emailBlurHandler = () => {
     dispatchEmailAction({ type: "INPUT_ONBLUR" });
   };
 
-  const validatePasswordHandler = () => {
+  const passwordBlurHandler = () => {
     dispatchPasswordAction({ type: "INPUT_ONBLUR" });
   };
 
@@ -72,7 +72,7 @@ const Login = props => {
             id="email"
             value={emailState.value}
             onChange={emailChangeHandler}
-            onBlur={validateEmailHandler}
+            onBlur={emailBlurHandler}
           />
         </div>
         <div className={`${classes.control} ${passwordState.isValid ? "" : classes.invalid}`}>
@@ -82,7 +82,7 @@ const Login = props => {
             id="password"
             value={passwordState.value}
             onChange={passwordChangeHandler}
-            onBlur={validatePasswordHandler}
+            onBlur={passwordBlurHandler}
           />
         </div>
         <div className={classes.actions}>
